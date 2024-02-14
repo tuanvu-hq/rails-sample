@@ -1,0 +1,27 @@
+<div class="rounded border">
+  <h2 class="text-lg font-bold p-4"><%= note.title %></h2>
+  <table class="w-full text-sm table-fixed text-left text-gray-500">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+      <tr>
+        <th class="px-6 py-3">
+          Date
+        </th>
+        <th class="px-6 py-3">
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% note.histories.each do |history| %>
+        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <%= history.updated_at %>
+          </th>
+          <td class="px-6 py-4 truncate">
+            <%= history.action %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

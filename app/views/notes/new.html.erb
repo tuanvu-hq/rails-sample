@@ -1,0 +1,20 @@
+<%= turbo_frame_tag :global_modal do %>
+  <section
+	id="new_note_modal"
+    data-controller="global-modal"
+    data-action="turbo:submit-end->global-modal#submitHandler"
+    class="fixed left-0 top-0 p-10 grid h-[100dvh] w-full place-items-center bg-black/50"
+    >
+    <div class="rounded bg-white grid w-full">
+      <%= render partial: 'notes/custom_close' %>
+      <%= form_with model: @note, url: notes_path, class: "p-5 grid grid-cols-2 gap-10" do |form| %>
+        <div>
+          <%= render partial: 'notes/custom_form', locals: { form: form, tags_value: "", submit_text: 'Create note' } %>
+        </div>
+        <div class="bg-red-500 p-4 grid">
+          <%= render partial: "notes/custom_alert", locals: { form: form } %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+<% end %>

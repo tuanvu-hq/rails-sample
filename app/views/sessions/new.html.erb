@@ -1,0 +1,9 @@
+<section id="signin_screen" class="grid h-[100dvh] grid-rows-[auto,_1fr]">
+  <%= render "shared/navbar"%>
+  <%= form_with model: @user, url: new_sign_in_path, class: "grid place-items-center p-8" do |form| %>
+    <div class="grid">
+      <%= render partial: "sessions/custom_form", locals: { form: form } %>
+      <%= render partial: "sessions/custom_alert", locals: { form: form } %>
+    </div>
+  <% end %>
+</section>

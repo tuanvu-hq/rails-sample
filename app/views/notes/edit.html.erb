@@ -1,0 +1,22 @@
+<%= turbo_frame_tag :global_modal do %>
+  <section
+	  id="edit_note_modal"
+    data-controller="global-modal"
+    data-action="turbo:submit-end->global-modal#submitHandler"
+    class="fixed left-0 top-0 p-10 grid h-[100dvh] w-full place-items-center bg-black/50"
+    >
+    <div class="rounded bg-white grid w-full">
+      <%= render 'notes/custom_close' do %>
+        <%= button_to "Delete note", note_path(@note.id), method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } }, class: "h-10 w-fit rounded border border-red-500 px-8 text-red-500" %>
+      <% end %>
+      <%= form_with model: @note, url: note_path, class: "p-5 grid grid-cols-2 gap-10" do |form| %>
+        <div>
+          <%= render partial: "notes/custom_form", locals: { form: form, tags_value: @note.tags.map(&:title).join(","), submit_text: 'Update note' } %>
+        </div>
+        <div class="bg-red-500 p-4 grid">
+          <%= render partial: "notes/custom_alert", locals: { form: form } %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+<% end %>

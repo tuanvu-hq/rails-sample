@@ -1,0 +1,20 @@
+<div  id="<%= dom_id note %>" class="grid gap-4 rounded border p-4 shadow overflow-hidden">
+  <div class="overflow-hidden">
+    <h3 class="truncate text-xl font-bold"><%= note.title %> <%= note.id %></h3>
+    <% if note.description.present? %>
+      <p class="truncate text-neutral-400"><%= note.description %></p>
+    <%else%>
+      <p class="truncate text-neutral-400">No description.</p>
+    <%end%>
+  </div>
+  <div class="flex gap-2 overflow-x-scroll az-scrollbar-hide">
+    <% if note.tags.present? %>
+      <% note.tags.each do |tag| %>
+        <p class="h-6 whitespace-nowrap rounded-full bg-red-500 px-4 text-white">#<%= tag.title %></p>
+      <%end%>
+    <%else%>
+      <p class="truncate text-neutral-400">No tags.</p>
+    <%end%>
+  </div>
+  <%= link_to "Details", edit_note_path(note.id), data: { turbo_frame: "global_modal" }, class: "h-10 w-full grid place-items-center rounded border border-red-500 px-8 text-red-500" %>
+</div>

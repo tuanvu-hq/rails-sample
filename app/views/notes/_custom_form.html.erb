@@ -1,0 +1,23 @@
+<div class="grid gap-2">
+  <div class="flex flex-col gap-1">
+    <%= form.label :title %>
+    <%= form.text_field :title, placeholder: "Note title", class: "rounded border px-3 py-1.5 w-full focus:outline-none" %>
+  </div>
+  <div class="flex flex-col gap-1">
+    <%= form.label :description %>
+    <%= form.text_field :description, placeholder: "The note description is optional", class: "rounded border px-3 py-1.5 w-full focus:outline-none" %>
+  </div>
+  <div class="flex flex-col gap-1">
+    <%= form.label :tags %>
+    <%= form.text_field :tags, placeholder: "Separate tags with a comma, e.g. - important, marketing advert, ...", class: "rounded border px-3 py-1.5 w-full focus:outline-none", value: (tags_value || "") %>
+  </div>
+  <div class="flex flex-col gap-1">
+    <%= form.label :note %>
+    <%= form.text_area :body, placeholder: "Your awesome ideas", class: "rounded border px-3 py-1.5 w-full focus:outline-none", rows: 6 %>
+  </div>
+</div>
+<div class="grid mt-10 grid-cols-[1fr,_auto,_1fr] place-content-end items-center gap-2">
+  <div class="h-px bg-red-500"></div>
+  <%= form.submit submit_text, class: "h-10 cursor-pointer w-fit rounded bg-red-500 px-8 text-white" %>
+  <div class="h-px bg-red-500"></div>
+</div>

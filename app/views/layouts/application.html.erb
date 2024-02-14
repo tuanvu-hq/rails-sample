@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Note App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+    <main class="">
+      <%= yield %>
+    </main>
+    <%= turbo_frame_tag :global_modal %>
+    <div class="fixed left-0 top-0 px-10 grid h-[100dvh] w-full place-items-center bg-white lg:hidden">
+      <p class="max-w-xl text-center">
+        The responsiveness is still under construction. Please use the app in fullscreen mode on a
+        desktop. <span class="font-bold text-red-500">&nbsp; :)</span>
+      </p>
+    </div>
+  </body>
+</html>

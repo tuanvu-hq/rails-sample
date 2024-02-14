@@ -1,0 +1,22 @@
+<div class="grid place-items-start overflow-hidden">
+  <div class="h-[35rem] w-[35rem] bg-red-500 p-8">
+    <% if form.object.errors.any? %>
+      <div class="grid h-full grid-rows-[auto,_1fr] gap-2">
+        <h2 class="mb-4 text-xl font-bold text-white">Caution</h2>
+        <div class="flex flex-col gap-2 overflow-y-scroll pr-2 az-scrollbar-hide">
+          <% form.object.errors.full_messages.each do |message| %>
+            <p class="rounded bg-white px-4 py-2">
+              <%= message %>.
+            </p>
+          <% end %>
+        </div>
+      </div>
+    <%else%>
+      <div class="grid h-full place-items-center">
+        <div class="w-1/2 h-1/2">
+          <%= render inline: Rails.root.join('public/svg/ruby.svg').read, layout: false %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

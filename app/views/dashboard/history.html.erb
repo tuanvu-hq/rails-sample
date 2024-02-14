@@ -1,0 +1,20 @@
+<section id="dashboard_screen" class="grid grid-cols-[18rem,_1fr] relative">
+  <div class="flex flex-col gap-2 bg-neutral-900 h-[100dvh] sticky top-0">
+    <%= render partial: "dashboard/custom_main_list"%>
+    <%= render partial: "dashboard/custom_sub_list"%>
+  </div>
+  <div class="space-y-10 p-8">
+    <div class="flex items-center justify-between">
+      <h1 class="text-3xl font-bold">History</h1>
+    </div>
+    <div>
+      <% if @notes && @notes.any? %>
+        <% @notes.each do |note| %>
+          <%= render partial: "dashboard/custom_history_table", locals: { note: note } %>
+        <% end %>
+      <% else %>
+        <p class="text-neutral-400">History is empty.</p>
+      <% end %>
+    </div>
+  </div>
+</section>

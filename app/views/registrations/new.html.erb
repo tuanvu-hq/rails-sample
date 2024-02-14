@@ -1,0 +1,9 @@
+<section id="signup_screen" class="grid h-[100dvh] grid-rows-[auto,_1fr]">
+  <%= render "shared/navbar"%>
+  <%= form_with model: @user, url: new_sign_up_path, class: "grid place-items-center p-8 overflow-hidden" do |form| %>
+    <div class="grid grid-cols-2 gap-10">
+      <%= render partial: "registrations/custom_form", locals: { form: form } %>
+      <%= render partial: "registrations/custom_alert", locals: { form: form } %>
+    </div>
+  <% end %>
+</section>

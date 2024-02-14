@@ -1,0 +1,31 @@
+<div class="p-4">
+  <a href="/" class="mb-10 mt-4 block text-xl font-bold text-white">
+    <span class="text-red-500">Railtastick</span> Notes
+  </a>
+  <ul class="flex flex-col gap-2 text-white">
+    <li>
+      <%= link_to dashboard_notes_path, class: "flex h-10 w-full items-center gap-2 rounded bg-neutral-800 px-4 text-left text-white duration-300 hover:bg-red-500" do %>
+        <div class="h-6 w-6">
+          <%= render inline: Rails.root.join('public/svg/notes.svg').read, layout: false %>
+        </div>
+        <p>Notes</p>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to dashboard_tags_path, class: "flex h-10 w-full items-center gap-2 rounded bg-neutral-800 px-4 text-left text-white duration-300 hover:bg-red-500" do %>
+        <div class="h-6 w-6">
+          <%= render inline: Rails.root.join('public/svg/tag.svg').read, layout: false %>
+        </div>
+        <p>Tags</p>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to dashboard_history_path, class: "flex h-10 w-full items-center gap-2 rounded bg-neutral-800 px-4 text-left text-white duration-300 hover:bg-red-500" do %>
+        <div class="h-6 w-6">
+          <%= render inline: Rails.root.join('public/svg/history.svg').read, layout: false %>
+        </div>
+        <p>History</p>
+      <% end %>
+    </li>
+  </ul>
+</div>

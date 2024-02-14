@@ -1,0 +1,32 @@
+<div class="ml-auto grid min-w-[30rem] grid-rows-[auto,_1fr]">
+  <h1 class="mb-14 text-4xl">Sign Up</h1>
+  <div class="grid">
+    <div class="grid gap-2">
+      <div class="grid gap-1">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name, placeholder: "Your first name", class: "rounded border px-3 py-1.5 w-full" %>
+      </div>
+      <div class="grid gap-1">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name, placeholder: "Your last name", class: "rounded border px-3 py-1.5 w-full" %>
+      </div>
+      <div class="grid gap-1">
+        <%= form.label :email %>
+        <%= form.email_field :email, placeholder: "example@email.com", class: "rounded border px-3 py-1.5 w-full" %>
+      </div>
+      <div class="grid gap-1">
+        <%= form.label :password %>
+        <%= form.password_field :password, placeholder: "Your password", class: "rounded border px-3 py-1.5 w-full" %>
+      </div>
+      <div class="grid gap-1">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation, placeholder: "Your password", class: "rounded border px-3 py-1.5 w-full" %>
+      </div>
+    </div>
+    <div class="grid grid-cols-[1fr,_auto,_1fr] place-content-end items-center gap-2">
+      <div class="h-px bg-red-500"></div>
+      <%= form.submit 'Sign Up', class: "h-8 w-fit rounded bg-red-500 px-8 text-white" %>
+      <div class="h-px bg-red-500"></div>
+    </div>
+  </div>
+</div>

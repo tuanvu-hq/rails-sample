@@ -1,0 +1,21 @@
+<section id="dashboard_screen" class="grid grid-cols-[18rem,_1fr] relative">
+  <div class="flex flex-col gap-2 bg-neutral-900 h-[100dvh] sticky top-0">
+    <%= render partial: "dashboard/custom_main_list"%>
+    <%= render partial: "dashboard/custom_sub_list"%>
+  </div>
+  <div class="space-y-10 p-8">
+    <div class="flex items-center justify-between">
+      <h1 class="text-3xl font-bold">Notes</h1>
+      <%= link_to "Create note", new_note_path, data: { turbo_frame: "global_modal" }, class: "grid h-10 place-items-center rounded bg-red-500 px-8 text-white duration-300 hover:bg-red-400" %>
+    </div>
+    <div id="turbo_notes" class="grid grid-cols-3 gap-4">
+      <% if @notes && @notes.any? %>
+        <% @notes.each do |note| %>
+          <%= render partial: "dashboard/custom_note", locals: { note: note } %>
+        <% end %>
+      <% else %>
+        <p class="text-neutral-400">No notes have been created yet.</p>
+      <% end %>
+    </div>
+  </div>
+</section>

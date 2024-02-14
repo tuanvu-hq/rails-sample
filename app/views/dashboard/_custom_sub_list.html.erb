@@ -1,0 +1,29 @@
+<div class="mt-auto grid gap-2 pb-4">
+  <div class="my-2 h-px bg-neutral-700"></div>
+  <h3 class="mb-3 text-white text-lg px-4">Account</h3>
+  <div class="px-4">
+    <%= button_to 'TEMP', class: "flex h-10 w-full items-center gap-2 rounded bg-neutral-800 px-4 text-left text-white duration-300 hover:bg-red-500 disabled:cursor-not-allowed disabled:text-neutral-700 disabled:hover:bg-neutral-800", disabled: true do %>
+      <div class="h-6 w-6">
+        <%= render inline: Rails.root.join('public/svg/account.svg').read, layout: false %>
+      </div>
+      <p>My Account</p>
+    <% end %>
+  </div>
+  <div class="px-4">
+    <%= button_to 'TEMP', class: "flex h-10 w-full items-center gap-2 rounded bg-neutral-800 px-4 text-left text-white duration-300 hover:bg-red-500 disabled:cursor-not-allowed disabled:text-neutral-700 disabled:hover:bg-neutral-800", disabled: true do %>
+      <div class="h-6 w-6">
+        <%= render inline: Rails.root.join('public/svg/settings.svg').read, layout: false %>
+      </div>
+      <p>Settings</p>
+    <% end %>
+  </div>
+  <div class="my-2 h-px bg-neutral-700"></div>
+  <div class="px-4">
+    <%= button_to destroy_sign_in_path, method: :delete, class: "flex h-10 w-full items-center gap-2 rounded bg-neutral-800 px-4 text-left text-white duration-300 hover:bg-red-500" do %>
+      <div class="h-6 w-6">
+        <%= render inline: Rails.root.join('public/svg/sign-out.svg').read, layout: false %>
+      </div>
+      <p>Sign Out</p>
+    <% end %>
+  </div>
+</div>

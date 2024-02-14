@@ -1,0 +1,77 @@
+{
+  /// universal
+  "breadcrumbs.enabled": false,
+  /// explorer
+  "explorer.openEditors.visible": 1,
+  "explorer.compactFolders": false,
+  /// workbench
+  "workbench.settings.editor": "json",
+  "workbench.editor.openPositioning": "left",
+  "workbench.sideBar.location": "left",
+  "workbench.panel.defaultLocation": "right",
+  /// "workbench.colorTheme": "Theme",
+  "workbench.preferredDarkColorTheme": "Theme", // Theme (extension)
+  "workbench.preferredLightColorTheme": "Nord Light", // Nord Light (extension)
+  "workbench.iconTheme": "material-icon-theme", // Material Icon Theme (extension)
+  /// auto-close
+  "auto-close-tag.activationOnLanguage": ["mdx"], /// editor
+  "editor.minimap.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Prettier - Code formatter (extension)
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always",
+    "source.fixAll": "always"
+  },
+  "editor.codeLens": true,
+  /// terminal
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.linux": "Git Bash",
+  /// prettier
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  /// peacock
+  "peacock.affectActivityBar": false,
+  "peacock.affectStatusBar": false,
+  // "peacock.color": "#dd0531", // angular
+  // "peacock.color": "#4C86C5", // solid
+  // "peacock.color": "#61dafb", // react
+  // "peacock.color": "#42b883", // vue
+  // "peacock.color": "#ff3e00", // svelte
+  // "peacock.color": "#027DFD", // flutter
+  "peacock.color": "#B11205", // ruby
+  // "peacock.color": "#ffffff", // default
+  /// typescript
+  "typescript.referencesCodeLens.enabled": true, // dart
+  "dart.previewFlutterUiGuides": true, /// custom
+  "[markdown]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[ruby]": {
+    "editor.tabSize": 2,
+    "editor.useTabStops": false
+    // "editor.defaultFormatter": "ruby-syntax-tree.vscode-syntax-tree"
+  },
+  // "[erb]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  "ruby.lint": {
+    "rubocop": true
+  },
+  "workbench.colorCustomizations": {
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#e31706",
+    "titleBar.activeBackground": "#b11205",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#b1120599",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "[erb]": {
+    "editor.defaultFormatter": "aliariff.vscode-erb-beautify",
+    "editor.formatOnSave": true
+  },
+  "files.associations": {
+    "*.html.erb": "erb"
+  }
+}

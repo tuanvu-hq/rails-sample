@@ -1,0 +1,16 @@
+<nav class="flex h-16 items-center px-8">
+  <%= link_to root_path do %>
+    <p class="text-xl font-bold"><span class="text-red-500">Railtastick</span> Notes</p>
+  <% end %>
+  <% if auth_is_user_signed_in? %>
+    <div class="ml-auto flex gap-2">
+      <%= link_to "#{auth_get_current_user.first_name}'s Dashboard", dashboard_notes_path, class: "grid h-8 px-8 place-items-center rounded border border-transparent bg-red-500 text-white duration-300 hover:bg-red-400" %>
+      <%= button_to "Log out", destroy_sign_in_path, method: :delete, class: "grid h-8 w-20 place-items-center rounded border border-red-500 text-red-500" %>
+    </div>
+  <% else %>
+    <div class="ml-auto flex gap-2">
+      <%= link_to "Sign Up", new_sign_up_path, class: "grid h-8 w-20 place-items-center rounded border border-red-500 text-red-500" %>
+      <%= link_to "Sign In", new_sign_in_path, class: "grid h-8 w-20 place-items-center rounded border border-transparent bg-red-500 text-white duration-300 hover:bg-red-400" %>
+    </div>
+  <% end %>
+</nav>
